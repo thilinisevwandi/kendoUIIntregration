@@ -1,0 +1,24 @@
+.sovMainContainer{
+    display: flex;
+    justify-content: flex-start;
+    justify-items:center;
+    width: 100%;
+    
+}
+.sovDescription{
+    border: 0.5px solid black;
+}
+.previousSubmission , .thisSubmission{
+    border: 0.5px solid black;
+}
+.descriptionHeader{
+    width: 20vw;
+    height: 2vh;
+    padding: 10px;
+    background-color: #e4e4e4;
+    text-align: end;   
+    cursor: pointer; 
+}
+.descriptionContainer{
+    width: 20vw;
+}

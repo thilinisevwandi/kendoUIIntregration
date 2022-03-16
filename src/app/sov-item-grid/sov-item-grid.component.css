@@ -1,0 +1,17 @@
+.descriptionHeader{
+    width: 20vw;
+    height: 2vh;
+    padding: 10px;
+    background-color: #e4e4e4;
+    cursor: pointer;
+    
+    
+}
+
+.sideBarCollapse{
+    width: 5vh;
+    height: 50vh;
+}
+.descriptionContainer{
+    width: 20vw;
+}
