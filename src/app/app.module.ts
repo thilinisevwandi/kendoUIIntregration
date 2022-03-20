@@ -7,6 +7,9 @@ import { SovItemDescriptionComponent } from './sov-item-description/sov-item-des
 import { SovItemGridComponent } from './sov-item-grid/sov-item-grid.component';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SovComponent } from './sov/sov.component';
+import { MouseWheelScrollDirective } from './mouse-wheel-scroll.directive';
+import { sovPanelHeaderList, sovPanelHeaderListToken } from './providers';
 
 
 
@@ -14,7 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     SovItemDescriptionComponent,
-    SovItemGridComponent
+    SovItemGridComponent,
+    SovComponent,
+    MouseWheelScrollDirective
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GridModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {provide:sovPanelHeaderListToken,useValue:sovPanelHeaderList}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

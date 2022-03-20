@@ -1,24 +1,28 @@
-.sovMainContainer{
-    display: flex;
-    justify-content: flex-start;
-    justify-items:center;
-    width: 100%;
-    
-}
+
 .sovDescription{
-    border: 0.5px solid black;
+    /* border: 0.5px solid black; */
+    width: 100%;
 }
-.previousSubmission , .thisSubmission{
-    border: 0.5px solid black;
-}
+
 .descriptionHeader{
-    width: 20vw;
-    height: 2vh;
+    /* width: 20vw; */
+    /* height: 2vh; */
     padding: 10px;
     background-color: #e4e4e4;
     text-align: end;   
     cursor: pointer; 
 }
 .descriptionContainer{
-    width: 20vw;
+    /* width: 20vw; */
+}
+  .text-bold {
+    font-weight: 600;
+  }
+
+.k-toolbar {
+    display: none;
+}
+
+#itemdescription{
+  width: 60vh;
 }

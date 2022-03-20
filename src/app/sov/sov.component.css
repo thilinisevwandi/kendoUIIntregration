@@ -1,0 +1,60 @@
+.sovMainContainer{
+    width: 99vw;
+    /* height: 88vh; */
+    /* background-color: antiquewhite; */
+    background-color: white;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.sovItemDescription{
+    /* background-color: aquamarine; */
+    background-color: white;
+    width: 30vw;
+    height: 62vh;
+    z-index: 5;
+    border: 1px solid black;
+    overflow-y: hidden;
+}
+.sovItemMoreDetail{
+    /* background-color: cadetblue; */
+    background-color: white;
+    max-width:70vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-items: center;
+    /* height: 60vh; */
+    height: 62vh;
+}
+.sovItemMoreDetail:hover{
+    overflow-x: scroll;
+}
+.sovItemMoreDetail::-webkit-scrollbar{ 
+  width: 16px;
+  height: 10px;
+}
+.sovItemMoreDetail::-webkit-scrollbar-track{
+    background-color: white;
+}
+.sovItemMoreDetail::-webkit-scrollbar-thumb{
+    background-color: black;
+    border-radius: 100px;
+    width: 50%;
+    height: 10px;
+}
+.sovItems{
+    /* height: 80vh; */
+    display: flex;
+    justify-items: center;
+    /* width: auto; */
+    min-width:  65vw;
+}
+.sovItemOuterContainer{
+    width: auto;
+    /* height: 80vh; */
+    /* background-color: blue; */
+    background-color: white;
+    border: 1px solid black;
+}

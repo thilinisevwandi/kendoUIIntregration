@@ -1,0 +1,27 @@
+<div class="sovMainContainer">
+    <div class="sovItemDescription">
+        <app-sov-item-description></app-sov-item-description>
+    </div>
+    <div class="sovItemMoreDetail" appMouseWheelScroll>
+        <div class="sovItems" >
+        <!-- test -->
+            <div class="sovItemOuterContainer" *ngFor="let headerName of sovPanelHeaderList.headerName">
+                <app-sov-item-grid [slidePanelName]= headerName></app-sov-item-grid>
+            </div>
+            <!-- <div class="sovItemOuterContainer">
+                <app-sov-item-grid></app-sov-item-grid>
+            </div>
+            <div class="sovItemOuterContainer">
+                <app-sov-item-grid></app-sov-item-grid>
+            </div>
+            <div class="sovItemOuterContainer">
+                <app-sov-item-grid></app-sov-item-grid>
+            </div>
+            <div class="sovItemOuterContainer">
+                <app-sov-item-grid></app-sov-item-grid>
+            </div> -->
+        <!-- test end -->
+        </div>
+    </div>
+</div>
+

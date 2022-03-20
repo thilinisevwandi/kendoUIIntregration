@@ -6,37 +6,167 @@
         <div class="descriptionContainer">
             <kendo-grid
             [data]="gridData"
-            [pageSize]=5
-            [skip]=0
+            kendoGridSelectBy="itemId"
+            [(selectedKeys)]="mySelection"
             [filter]="filter"
-            [sortable]="true"
-            [pageable]="true"
             [filterable]="true"
             (dataStateChange)="dataStateChange($event)"
-            
-          >
-            <kendo-grid-column
-              field="ProductID"
-              title="ID"
-              [width]=20
-              [filterable]="false"
+            [height]=400
+            id="itemdescription"
+            [pageable]="false"
             >
+     
+            <kendo-grid-checkbox-column
+              [width]="4"
+              [headerClass]="{ 'text-center': true }"
+              [class]="{ 'text-center': true }"
+              [resizable]="false"
+              [columnMenu]="false"
+              [showSelectAll]="true">
+            </kendo-grid-checkbox-column>
+            <kendo-grid-column
+              field="itemId"
+              title="Schedule Item ID"
+              [width]=7
+              [headerClass]="{ 'text-center': true }">
             </kendo-grid-column>
-            <kendo-grid-column field="ProductName" title="Product Name" [width]="20">
+            <kendo-grid-column 
+              field="description" 
+              title="Description" 
+              [width]="20">
             </kendo-grid-column>
-            <kendo-grid-column field="Discontinued" [width]=25 filter="boolean">
-              <ng-template kendoGridCellTemplate let-dataItem>
-                <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
-              </ng-template>
-            </kendo-grid-column>
+              <!-- <kendo-grid-column field="Discontinued" [width]=25 filter="boolean">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                  <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
+                </ng-template>
+              </kendo-grid-column> -->
+       
+  
           </kendo-grid>
       
         </div>
     </div>
-    <!--  -->
-    <div class="previousSubmission">
-      <app-sov-item-grid [isToggle]="isToggle"></app-sov-item-grid>
-    </div>
-    <!--  -->
    
 </div>
+
+
+<!-- <div class="sovMainContainer">
+  <div class="sovDescription">
+      <div class="descriptionHeader" (click)="toggleAllSOVSlide()">
+          <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+      </div>
+      <div class="descriptionContainer">
+
+        <kendo-grid
+        [kendoGridBinding]="gridView"
+        kendoGridSelectBy="id"
+        [(selectedKeys)]="mySelection"
+        [pageSize]="20"
+        [pageable]="true"
+        [sortable]="true"
+        [groupable]="true"
+        [reorderable]="true"
+        [resizable]="true"
+        [height]="500"
+        [columnMenu]="{ filter: true }"
+      >
+        <kendo-grid-checkbox-column
+          [width]="45"
+          [headerClass]="{ 'text-center': true }"
+          [class]="{ 'text-center': true }"
+          [resizable]="false"
+          [columnMenu]="false"
+          [showSelectAll]="true"
+        ></kendo-grid-checkbox-column>
+        <kendo-grid-column-group title="Employee" [columnMenu]="false">
+          <kendo-grid-column field="full_name" title="Contact Name" [width]="220">
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <div
+                class="customer-photo"
+               
+              ></div>
+              <div class="customer-name">{{ dataItem.full_name }}</div>
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column field="job_title" title="Job Title" [width]="220">
+          </kendo-grid-column>
+          <kendo-grid-column
+            field="country"
+            title="Country"
+            [width]="100"
+            [class]="{ 'text-center': true }"
+            [resizable]="false"
+          >
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <img class="flag"  width="30" />
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column
+            field="is_online"
+            title="Status"
+            [width]="100"
+            [class]="{ 'text-center': true }"
+            [resizable]="false"
+            filter="boolean"
+          >
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <span
+                *ngIf="dataItem.is_online === true"
+                class="badge badge-success"
+                >Online</span
+              >
+              <span
+                *ngIf="dataItem.is_online === false"
+                class="badge badge-danger"
+                >Offline</span
+              >
+            </ng-template>
+          </kendo-grid-column>
+        </kendo-grid-column-group>
+        <kendo-grid-column-group title="Performance" [columnMenu]="false">
+          <kendo-grid-column
+            field="rating"
+            title="Rating"
+            [width]="110"
+            [resizable]="false"
+            filter="numeric"
+          >
+            <ng-template kendoGridCellTemplate let-dataItem>
+         
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column
+            field="target"
+            title="Engagement"
+            [width]="230"
+            [resizable]="false"
+            filter="numeric"
+          >
+
+          </kendo-grid-column>
+          <kendo-grid-column
+            field="budget"
+            title="Budget"
+            [width]="100"
+            filter="numeric"
+          >
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <span [ngClass]="{ 'red text-bold': dataItem.budget < 0 }">{{
+                dataItem.budget | currency
+              }}</span>
+            </ng-template>
+          </kendo-grid-column>
+        </kendo-grid-column-group>
+        <kendo-grid-column-group title="Contacts" [columnMenu]="false">
+          <kendo-grid-column field="phone" title="Phone" [width]="130">
+          </kendo-grid-column>
+          <kendo-grid-column field="address" title="Address" [width]="200">
+          </kendo-grid-column>
+        </kendo-grid-column-group>
+
+      </kendo-grid>
+    
+      </div>
+  </div>
+ 
+</div> -->

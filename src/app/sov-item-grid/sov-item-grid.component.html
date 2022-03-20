@@ -1,50 +1,52 @@
 <div class="descriptionHeader" (click)="toggleSOVContent()" [ngClass]="{'sideBarCollapse' : isCollapse}">
     <i class="fa fa-angle-left" aria-hidden="true"></i>
-  <span>
-    test Name
+  <span class="headerText" >
+    {{slidePanelName}}
   </span>  
+  <!-- <span class="headerText" *ngIf="isCollapse">
+    <svg width="50" height="300">
+      <text x="28" y="150" transform="rotate(-90,28,150)" style="text-anchor:middle;font-size:14px">Schedule Items</text>
+    </svg>
+  </span>   -->
 </div>
 <div class="descriptionContainer" *ngIf="!isCollapse">
     <kendo-grid
       [data]="gridData"
-      [pageSize]=5
-      [skip]=0
       [filter]="filter"
       [sortable]="true"
-      [pageable]="true"
       [filterable]="true"
       (dataStateChange)="dataStateChange($event)"
+      id="test1"
     >
-      <kendo-grid-column
-        field="ProductID"
-        title="ID"
-        [width]=40
-        [filterable]="false"
-      >
-      </kendo-grid-column>
-      <kendo-grid-column field="ProductName" title="Product Name">
+      <kendo-grid-column field="quantity" title="Schedule quantity" [width]=20>
       </kendo-grid-column>
       <kendo-grid-column
-        field="FirstOrderedOn"
-        title="First Ordered On"
-        [width]="240"
-        filter="date"
-        format="{0:d}"
+        field="UOM"
+        title="UOM"
+        [width]="10"
       >
       </kendo-grid-column>
       <kendo-grid-column
         field="UnitPrice"
         title="Unit Price"
-        [width]=180
+        [width]=15
         filter="numeric"
         format="{0:c}"
       >
-      </kendo-grid-column>
-      <kendo-grid-column field="Discontinued" [width]=120 filter="boolean">
+      </kendo-grid-column> 
+      <kendo-grid-column
+      field="scheduleValue"
+      title="Schedule Value"
+      [width]=15
+      filter="numeric"
+      format="{0:c}"
+    >
+    </kendo-grid-column>
+      <!-- <kendo-grid-column field="Discontinued" [width]=120 filter="boolean">
         <ng-template kendoGridCellTemplate let-dataItem>
           <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
         </ng-template>
-      </kendo-grid-column>
+      </kendo-grid-column> -->
     </kendo-grid>
 
 </div>

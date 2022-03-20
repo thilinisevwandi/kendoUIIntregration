@@ -1,8 +1,10 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
 import { DataStateChangeEvent, GridDataResult } from '@progress/kendo-angular-grid';
 
-import { sampleProducts } from "./product";
+import { SampleItem } from "../sovItem";
 import { process, State } from "@progress/kendo-data-query";
+import { SovServiceService } from '../sov-service.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -10,42 +12,47 @@ import { process, State } from "@progress/kendo-data-query";
   templateUrl: './sov-item-grid.component.html',
   styleUrls: ['./sov-item-grid.component.css']
 })
-export class SovItemGridComponent implements OnInit {
+export class SovItemGridComponent implements OnInit,OnDestroy {
 
-  constructor() { }
+  constructor(private sovService: SovServiceService) { }
 
-  private _isToggle = false;
-
-  @Input() isToggle = new EventEmitter();
-
+  isCollapse  = false;
   isDisplayContent = true;
-  isCollapse = true;
-   state: State = {
+  sub: Subscription  = new Subscription;
+  state: State = {
     skip: 0,
     take : 5,
 
     // Initial filter descriptor
     filter: {
       logic: "and",
-      filters: [{ field: "ProductName", operator: "contains", value: "Chef" }],
+      filters: [],
     },
   };
   filter:any = {
     logic: "and",
-    filters: [{ field: "ProductName", operator: "contains", value: "Chef" }],
+    filters: []
   }
-   gridData: GridDataResult = process(sampleProducts, this.state);
-
+   gridData: GridDataResult = process(SampleItem, this.state);
+    @Input() slidePanelName = '';
    dataStateChange(state: DataStateChangeEvent): void {
     this.state = state;
-    this.gridData = process(sampleProducts, this.state);
+    this.gridData = process(SampleItem, this.state);
   }
   ngOnInit(): void {
-    this.isToggle.subscribe(val=>{
-      this.isCollapse = !this.isCollapse
+    // this.isToggle.subscribe(val=>{
+    //   this.isCollapse = !this.isCollapse
+    // })
+    // this.isCollapse = this.sovService.isCollapseAll
+   this.sub = this.sovService.isCollapseAll$.subscribe(collapseAll=>{
+        this.isCollapse = collapseAll;
     })
   }
   toggleSOVContent(){
-    this.isCollapse = !this.isCollapse
+    this.isCollapse = !this.isCollapse;
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }
