@@ -17,6 +17,9 @@
       [filterable]="true"
       (dataStateChange)="dataStateChange($event)"
       id="test1"
+      [pageable]="false"
+      [height]="400"
+      #table1
     >
       <kendo-grid-column field="quantity" title="Schedule quantity" [width]=20>
       </kendo-grid-column>

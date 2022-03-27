@@ -1,4 +1,4 @@
-import { Component, OnInit,EventEmitter, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit,EventEmitter, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
 import { DataBindingDirective, DataStateChangeEvent, GridDataResult } from '@progress/kendo-angular-grid';
 import { sampleProducts } from "../sov-item-grid/product";
 import { process, State } from "@progress/kendo-data-query";
@@ -12,9 +12,18 @@ import { Subscription } from 'rxjs';
   templateUrl: './sov-item-description.component.html',
   styleUrls: ['./sov-item-description.component.css']
 })
-export class SovItemDescriptionComponent implements OnInit ,OnDestroy{
-
+export class SovItemDescriptionComponent implements OnInit ,OnDestroy,AfterViewInit{
   constructor(private sovService : SovServiceService) { }
+  ngAfterViewInit(): void {
+    document.querySelectorAll('.k-grid .k-grid-content').forEach(x =>{
+      x.addEventListener('scroll',((e:any)=>{
+        document.querySelectorAll('.k-grid .k-grid-content').forEach(y=>{
+        y.scrollTop = x.scrollTop
+       })     
+          return
+      }))     
+    })
+  }
 
   sub : Subscription = new Subscription;
   isToggle = new EventEmitter();
@@ -23,7 +32,7 @@ export class SovItemDescriptionComponent implements OnInit ,OnDestroy{
   // columnWidth = "25vw";
   state: State = {
     skip: 0,
-    take :5,
+    take :25,
 
     // filter: {
     //   logic: "and",

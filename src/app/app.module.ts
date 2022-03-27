@@ -10,6 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SovComponent } from './sov/sov.component';
 import { MouseWheelScrollDirective } from './mouse-wheel-scroll.directive';
 import { sovPanelHeaderList, sovPanelHeaderListToken } from './providers';
+import { SingleGridComponent } from './single-grid/single-grid.component';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { ManageComponentComponent } from './manage-component/manage-component.component';
+import { DialogsModule } from '@progress/kendo-angular-dialog';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+
+
+
 
 
 
@@ -19,13 +28,19 @@ import { sovPanelHeaderList, sovPanelHeaderListToken } from './providers';
     SovItemDescriptionComponent,
     SovItemGridComponent,
     SovComponent,
-    MouseWheelScrollDirective
+    MouseWheelScrollDirective,
+    SingleGridComponent,
+    MenuBarComponent,
+    ManageComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GridModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DialogsModule,
+    InputsModule,
+    LayoutModule
   ],
   providers: [
     {provide:sovPanelHeaderListToken,useValue:sovPanelHeaderList}

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
 import { DataStateChangeEvent, GridDataResult } from '@progress/kendo-angular-grid';
 
 import { SampleItem } from "../sovItem";
@@ -12,16 +12,43 @@ import { Subscription } from 'rxjs';
   templateUrl: './sov-item-grid.component.html',
   styleUrls: ['./sov-item-grid.component.css']
 })
-export class SovItemGridComponent implements OnInit,OnDestroy {
+export class SovItemGridComponent implements OnInit,OnDestroy ,AfterViewInit{
 
   constructor(private sovService: SovServiceService) { }
+  ngAfterViewInit(): void {
+  //   document.querySelector('.k-grid .k-grid-content')?.addEventListener('scroll',((e:any)=>{
+  //     console.log(e)
+  //   //  e.scrollTop = 0;
+  //  //  e.target.scrollTop = e.currentTarget.scrollTop;
+  //    document.querySelectorAll('.k-grid .k-grid-content').forEach(x=>{
+  //   //  x.scrollTop = e.scrollTop
+  
+  //     x.scrollTop = e.scrollTop
+ 
+  //   })
+     // this.right.nativeElement.scrollTop =this.left.nativeElement.scrollTop;
+     // alert("hai")
+   // }))
+  //  document.querySelectorAll('.k-grid .k-grid-content').forEach(x =>{
+  //    x.addEventListener('scroll',((e:any)=>{
+  //      document.querySelectorAll('.k-grid .k-grid-content').forEach(y=>{
+  //       x.addEventListener('scroll',((e:any)=>{
+  //           y.scrollTop = x.scrollTop;
+  //       }))
+  //     })
+     
+         
+  //    }))
+  //  })
+  
+  }
 
   isCollapse  = false;
   isDisplayContent = true;
   sub: Subscription  = new Subscription;
   state: State = {
     skip: 0,
-    take : 5,
+    take : 25,
 
     // Initial filter descriptor
     filter: {
@@ -55,4 +82,10 @@ export class SovItemGridComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+
+  OnScroll(event:any){
+  //  this.right.nativeElement.scrollTop =this.left.nativeElement.scrollTop;
+  alert("hai")
+  }
+
 }

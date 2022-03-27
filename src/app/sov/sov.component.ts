@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { sovPanelHeaderListToken } from '../providers';
+import { SovServiceService } from '../sov-service.service';
 
 @Component({
   selector: 'app-sov',
@@ -7,8 +8,11 @@ import { sovPanelHeaderListToken } from '../providers';
   styleUrls: ['./sov.component.css']
 })
 export class SovComponent implements OnInit {
-
-  constructor( @Inject(sovPanelHeaderListToken) public sovPanelHeaderList : any) { }
+ get isDisplayManageColumns(){
+   return this.sovService.isDisplayManageColumnPopup ;
+ }
+  constructor( @Inject(sovPanelHeaderListToken) public sovPanelHeaderList : any
+  ,private sovService: SovServiceService) { }
 
   ngOnInit(): void {
   }

@@ -1,0 +1,26 @@
+.manageColumnsMainConatiner{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.manageColumnsSubConatiner{
+    width: 40%;
+    padding: 5px;
+}
+.columnsController{
+    width: 10%;
+    margin: 5px;
+    background-color:antiquewhite;
+}
+.footer{
+    display: flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding: 5px;
+}
+.leftActionBtn{
+    display: flex;
+    gap: 5px;
+}

@@ -1,0 +1,76 @@
+<kendo-dialog
+title="Column section builder"
+(close)="closeMangeColumnsPopup()"
+[minWidth]="250"
+[width]="700">
+<div class="manageColumnsMainConatiner">
+    <div class="availableColumns manageColumnsSubConatiner">
+        Available Columns
+        <kendo-textbox       
+        placeholder="Type your message here"
+        [clearButton]="true">
+        <ng-template kendoTextBoxSuffixTemplate>
+          <kendo-textbox-separator></kendo-textbox-separator>
+          <span class="k-icon k-i-search"></span>
+        </ng-template>
+      </kendo-textbox>
+      <div class="columnsMainSection">
+          
+      </div>
+      <div class="columnsDescription">
+        <kendo-panelbar>
+            <kendo-panelbar-item title="Teams" [expanded]="true">
+              <kendo-panelbar-item title="Team 1"></kendo-panelbar-item>
+              <kendo-panelbar-item title="Team 2"></kendo-panelbar-item>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Releases" [expanded]="true">
+              <kendo-panelbar-item title="Q1 2021"> </kendo-panelbar-item>
+              <kendo-panelbar-item title="Q2 2021"> </kendo-panelbar-item>
+            </kendo-panelbar-item>
+          </kendo-panelbar>
+      </div>
+    </div>
+    <div class="columnsController">
+        <!-- ➡ -->
+    </div>
+    <div class="selectedColumns manageColumnsSubConatiner">
+        Selected Columns
+        <kendo-textbox       
+        placeholder="Type your message here"
+        [clearButton]="true">
+        <ng-template kendoTextBoxSuffixTemplate>
+          <kendo-textbox-separator></kendo-textbox-separator>
+          <span class="k-icon k-i-search"></span>
+        </ng-template>
+      </kendo-textbox>
+      <div class="columnsMainSection">
+          
+    </div>
+    <div class="columnsDescription">
+      <kendo-panelbar>
+          <kendo-panelbar-item title="Teams" [expanded]="true">
+            <kendo-panelbar-item title="Team 1"></kendo-panelbar-item>
+            <kendo-panelbar-item title="Team 2"></kendo-panelbar-item>
+          </kendo-panelbar-item>
+          <kendo-panelbar-item title="Releases" [expanded]="true">
+            <kendo-panelbar-item title="Q1 2021"> </kendo-panelbar-item>
+            <kendo-panelbar-item title="Q2 2021"> </kendo-panelbar-item>
+          </kendo-panelbar-item>
+        </kendo-panelbar>
+    </div>
+    </div>
+</div>
+<kendo-dialog-actions>
+    <div class="footer">
+        <div class="rightActionBtn">
+            <button kendoButton (click)="clearManageColumnsPopup()" themeColor="info" fillMode="outline">
+                Reset to default
+              </button>
+        </div>
+        <div class="leftActionBtn">
+            <button kendoButton (click)="closeMangeColumnsPopup()" fillMode="outline">Cancel</button>
+            <button kendoButton (click)="saveMangeColumnsPopup()" themeColor="info">Save</button>
+        </div>  
+    </div>
+</kendo-dialog-actions>
+</kendo-dialog>

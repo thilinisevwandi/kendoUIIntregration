@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 export class SovServiceService {
 
   constructor() { }
-
+  isDisplayManageColumnPopup : boolean = false;
   // isCollapseAll = false;
   private isCollapseAll = new Subject<boolean>();
   isCollapseAll$ = this.isCollapseAll.asObservable();
@@ -15,4 +15,5 @@ export class SovServiceService {
   toggleAllSlideBar(val:boolean){
     this.isCollapseAll.next(val);
   }
+  
 }
