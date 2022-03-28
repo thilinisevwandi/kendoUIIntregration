@@ -22,3 +22,9 @@
     /* background-color: blueviolet; */
     padding: 5px;
 }
+.manageColumns{
+    border: 1px solid blue;
+    padding:5px;
+    color: rgb(10, 10, 212);
+    cursor: pointer;
+}

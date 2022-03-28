@@ -1,62 +1,204 @@
 <kendo-dialog
-title="Column section builder"
-(close)="closeMangeColumnsPopup()"
-[minWidth]="250"
-[width]="700">
+  title="Column section builder"
+  (close)="closeMangeColumnsPopup()">
 <div class="manageColumnsMainConatiner">
-    <div class="availableColumns manageColumnsSubConatiner">
-        Available Columns
-        <kendo-textbox       
-        placeholder="Type your message here"
-        [clearButton]="true">
-        <ng-template kendoTextBoxSuffixTemplate>
-          <kendo-textbox-separator></kendo-textbox-separator>
-          <span class="k-icon k-i-search"></span>
-        </ng-template>
-      </kendo-textbox>
+  <div class="availableColumns manageColumnsSubConatiner">
+    <div class="contentHeader">
+      Available Columns
+    </div>  
+    <div class="searchBox">
+      <kendo-textbox placeholder="Search"></kendo-textbox>
+      <div class="k-icon k-i-search searchIcon"></div>
+    </div>   
+    <!-- Main Section -->
       <div class="columnsMainSection">
-          
+        <div class="sectionCheckAll">
+          <input type="checkbox"  kendoCheckBox /> 
+        </div>
+        <div class="sectionCheckAllHeader">
+          Section/coulmn name
+        </div>   
       </div>
+    <!--  -->
       <div class="columnsDescription">
-        <kendo-panelbar>
-            <kendo-panelbar-item title="Teams" [expanded]="true">
-              <kendo-panelbar-item title="Team 1"></kendo-panelbar-item>
-              <kendo-panelbar-item title="Team 2"></kendo-panelbar-item>
-            </kendo-panelbar-item>
-            <kendo-panelbar-item title="Releases" [expanded]="true">
-              <kendo-panelbar-item title="Q1 2021"> </kendo-panelbar-item>
-              <kendo-panelbar-item title="Q2 2021"> </kendo-panelbar-item>
-            </kendo-panelbar-item>
-          </kendo-panelbar>
+        <div class="panelbar-wrapper">
+            <kendo-panelbar >
+              <kendo-panelbar-item  [expanded]="true">
+                <ng-template kendoPanelBarItemTitle>
+                  
+                  <div class="subPanelHeaderSection">
+                    <div class="sectionCheckAll">
+                      <input type="checkbox"  kendoCheckBox /> 
+                    </div>
+                    <div class="sectionCheckAllHeader">
+                      Remaining
+                    </div>   
+                  </div>
+                </ng-template>
+                  <ng-template kendoPanelBarContent>
+                    <div class="columnsMainSection">
+                      <div class="sectionCheckAll">
+                        <input type="checkbox"  kendoCheckBox /> 
+                      </div>
+                      <div class="sectionCheckAllHeader">
+                        coulmn name
+                      </div>   
+                    </div>
+                    <div class="columnsMainSection">
+                      <div class="sectionCheckAll">
+                        <input type="checkbox"  kendoCheckBox /> 
+                      </div>
+                      <div class="sectionCheckAllHeader">
+                        coulmn name
+                      </div>   
+                    </div>
+                    <div class="columnsMainSection">
+                      <div class="sectionCheckAll">
+                        <input type="checkbox"  kendoCheckBox /> 
+                      </div>
+                      <div class="sectionCheckAllHeader">
+                        coulmn name
+                      </div>   
+                    </div>
+                    <div class="columnsMainSection">
+                      <div class="sectionCheckAll">
+                        <input type="checkbox"  kendoCheckBox /> 
+                      </div>
+                      <div class="sectionCheckAllHeader">
+                        coulmn name
+                      </div>   
+                    </div>
+                </ng-template>
+              </kendo-panelbar-item>   
+                       <!--  -->
+                       <kendo-panelbar-item  [expanded]="true">
+                        <ng-template kendoPanelBarItemTitle>
+                          
+                          <div class="subPanelHeaderSection">
+                            <div class="sectionCheckAll">
+                              <input type="checkbox"  kendoCheckBox /> 
+                            </div>
+                            <div class="sectionCheckAllHeader">
+                             Quantity
+                            </div>   
+                          </div>
+                        </ng-template>
+                          <ng-template kendoPanelBarContent>
+                            <div class="columnsMainSection">
+                              <div class="sectionCheckAll">
+                                <input type="checkbox"  kendoCheckBox /> 
+                              </div>
+                              <div class="sectionCheckAllHeader">
+                                coulmn name
+                              </div>   
+                            </div>
+                            <div class="columnsMainSection">
+                              <div class="sectionCheckAll">
+                                <input type="checkbox"  kendoCheckBox /> 
+                              </div>
+                              <div class="sectionCheckAllHeader">
+                                coulmn name
+                              </div>   
+                            </div>
+                            <div class="columnsMainSection">
+                              <div class="sectionCheckAll">
+                                <input type="checkbox"  kendoCheckBox /> 
+                              </div>
+                              <div class="sectionCheckAllHeader">
+                                coulmn name
+                              </div>   
+                            </div>
+                            <div class="columnsMainSection">
+                              <div class="sectionCheckAll">
+                                <input type="checkbox"  kendoCheckBox /> 
+                              </div>
+                              <div class="sectionCheckAllHeader">
+                                coulmn name
+                              </div>   
+                            </div>
+                        </ng-template>
+                      </kendo-panelbar-item>  
+                       <!--  -->
+                       <!--  -->
+                       <kendo-panelbar-item  [expanded]="true">
+                        <ng-template kendoPanelBarItemTitle>
+                          
+                          <div class="subPanelHeaderSection">
+                            <div class="sectionCheckAll">
+                              <input type="checkbox"  kendoCheckBox /> 
+                            </div>
+                            <div class="sectionCheckAllHeader">
+                             Quantity
+                            </div>   
+                          </div>
+                        </ng-template>
+                          <ng-template kendoPanelBarContent>
+                            <div class="columnsMainSection">
+                              <div class="sectionCheckAll">
+                                <input type="checkbox"  kendoCheckBox /> 
+                              </div>
+                              <div class="sectionCheckAllHeader">
+                                coulmn name
+                              </div>   
+                            </div>
+                            <div class="columnsMainSection">
+                              <div class="sectionCheckAll">
+                                <input type="checkbox"  kendoCheckBox /> 
+                              </div>
+                              <div class="sectionCheckAllHeader">
+                                coulmn name
+                              </div>   
+                            </div>
+                            <div class="columnsMainSection">
+                              <div class="sectionCheckAll">
+                                <input type="checkbox"  kendoCheckBox /> 
+                              </div>
+                              <div class="sectionCheckAllHeader">
+                                coulmn name
+                              </div>   
+                            </div>
+                            <div class="columnsMainSection">
+                              <div class="sectionCheckAll">
+                                <input type="checkbox"  kendoCheckBox /> 
+                              </div>
+                              <div class="sectionCheckAllHeader">
+                                coulmn name
+                              </div>   
+                            </div>
+                        </ng-template>
+                      </kendo-panelbar-item> 
+                       <!--  -->
+            </kendo-panelbar>
+        </div>
       </div>
     </div>
     <div class="columnsController">
-        <!-- ➡ -->
+      <div class="k-icon k-i-arrow-right"></div>
+      <div class="k-icon k-i-arrow-left"></div>
     </div>
     <div class="selectedColumns manageColumnsSubConatiner">
         Selected Columns
-        <kendo-textbox       
-        placeholder="Type your message here"
-        [clearButton]="true">
-        <ng-template kendoTextBoxSuffixTemplate>
-          <kendo-textbox-separator></kendo-textbox-separator>
-          <span class="k-icon k-i-search"></span>
-        </ng-template>
-      </kendo-textbox>
+        <div class="searchBox">
+          <kendo-textbox placeholder="Search"></kendo-textbox>
+          <div class="k-icon k-i-search searchIcon"></div>
+        </div> 
+      <!-- Main Section -->
       <div class="columnsMainSection">
-          
-    </div>
+        <div class="sectionCheckAll">
+          <input type="checkbox"  kendoCheckBox /> 
+        </div>
+        <div class="sectionCheckAllHeader">
+          Section/coulmn name
+        </div>   
+      </div>
+    <!--  -->
     <div class="columnsDescription">
-      <kendo-panelbar>
-          <kendo-panelbar-item title="Teams" [expanded]="true">
-            <kendo-panelbar-item title="Team 1"></kendo-panelbar-item>
-            <kendo-panelbar-item title="Team 2"></kendo-panelbar-item>
-          </kendo-panelbar-item>
-          <kendo-panelbar-item title="Releases" [expanded]="true">
-            <kendo-panelbar-item title="Q1 2021"> </kendo-panelbar-item>
-            <kendo-panelbar-item title="Q2 2021"> </kendo-panelbar-item>
-          </kendo-panelbar-item>
-        </kendo-panelbar>
+      <div class="lockedColumns">
+          Schedule Item Id
+      </div>
+      <div class="lockedColumns">
+          Description  
+      </div>
     </div>
     </div>
 </div>

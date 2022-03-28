@@ -16,6 +16,8 @@ import { ManageComponentComponent } from './manage-component/manage-component.co
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { LayoutModule } from '@progress/kendo-angular-layout';
+import { ListViewModule } from '@progress/kendo-angular-listview';
+
 
 
 
@@ -40,7 +42,8 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
     BrowserAnimationsModule,
     DialogsModule,
     InputsModule,
-    LayoutModule
+    LayoutModule,
+    ListViewModule
   ],
   providers: [
     {provide:sovPanelHeaderListToken,useValue:sovPanelHeaderList}
