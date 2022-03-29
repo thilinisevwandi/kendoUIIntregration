@@ -20,7 +20,7 @@
         </div>   
       </div>
     <!--  -->
-      <div class="columnsDescription">
+      <div class="availableColumnsDescription">
         <div class="panelbar-wrapper">
             <kendo-panelbar >
               <kendo-panelbar-item  [expanded]="true">
@@ -173,11 +173,14 @@
       </div>
     </div>
     <div class="columnsController">
-      <div class="k-icon k-i-arrow-right"></div>
-      <div class="k-icon k-i-arrow-left"></div>
+      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+      <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
     </div>
     <div class="selectedColumns manageColumnsSubConatiner">
+      <div class="contentHeader">
         Selected Columns
+      </div>
+       
         <div class="searchBox">
           <kendo-textbox placeholder="Search"></kendo-textbox>
           <div class="k-icon k-i-search searchIcon"></div>
@@ -192,26 +195,158 @@
         </div>   
       </div>
     <!--  -->
-    <div class="columnsDescription">
+    <div class="lockedColumnSection">
       <div class="lockedColumns">
-          Schedule Item Id
+        Schedule Item Id
       </div>
       <div class="lockedColumns">
           Description  
       </div>
+      <div class="lockedColumnSeperator"> 
+        <hr>
+        <span class="k-icon k-i-lock"></span>
+        <hr>
+      </div>
     </div>
+   <!-- locked column end -->
+    <div class="selectedColumnsDescription">
+      <div class="dragableMainColumnSection">
+        <div class="dragableColumnSection columnsMainSection">
+          <div class="dragabbleSectionCheckBox">
+            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            <i class="fa fa-ellipsis-v" aria-hidden="true" style="height: 16px;"></i>
+            <input type="checkbox"  kendoCheckBox style="margin-left: 5px;"/> 
+          </div>
+          <div class="sectionCheckAllHeader">
+            Quantity
+          </div> 
+        </div> 
+        <kendo-sortable
+        [kendoSortableBinding]="items"
+        [animation]="true"
+        itemClass="columnsMainSection"
+        activeItemClass="columnsMainSection"
+        zone="section1"
+        >
+          <ng-template let-palette="item">
+            <div class="columnsMainSection">
+              <!-- <div class="sectionCheckAll">
+                <input type="checkbox"  kendoCheckBox /> 
+              </div> -->
+              <div class="dragabbleSectionCheckBox">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                <i class="fa fa-ellipsis-v" aria-hidden="true" style="height: 16px;"></i>
+                <input type="checkbox"  kendoCheckBox style="margin-left: 5px;"/> 
+              </div>
+              <div class="sectionCheckAllHeader">
+                {{palette}}
+              </div> 
+            </div>
+          </ng-template>
+        </kendo-sortable>
+      </div>
+        <!-- dragabble column section 02 -->
+        <div class="dragableMainColumnSection">
+          <div class="dragableColumnSection columnsMainSection">
+            <!-- <div class="sectionCheckAll">
+              <input type="checkbox"  kendoCheckBox /> 
+            </div> -->
+            <div class="dragabbleSectionCheckBox">
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              <i class="fa fa-ellipsis-v" aria-hidden="true" style="height: 16px;"></i>
+              <input type="checkbox"  kendoCheckBox style="margin-left: 5px;"/> 
+            </div>
+            <div class="sectionCheckAllHeader">
+              Quantity
+            </div> 
+          </div> 
+          <kendo-sortable
+          [kendoSortableBinding]="items2"
+          [animation]="true"
+          itemClass="columnsMainSection"
+          activeItemClass="columnsMainSection"
+          zone="section2"
+          >
+            <ng-template let-palette="item">
+              <div class="columnsMainSection">
+                <!-- <div class="sectionCheckAll">
+                  <input type="checkbox"  kendoCheckBox /> 
+                </div> -->
+                <div class="dragabbleSectionCheckBox">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-ellipsis-v" aria-hidden="true" style="height: 16px;"></i>
+                  <input type="checkbox"  kendoCheckBox style="margin-left: 5px;"/> 
+                </div>
+                <div class="sectionCheckAllHeader">
+                  {{palette}}
+                </div> 
+              </div>
+            </ng-template>
+          </kendo-sortable>
+        </div>
+        <!-- dragabble column section 02 end -->
+        <!-- dragabble column section 03 -->
+        <div class="dragableMainColumnSection">
+          <div class="dragableColumnSection columnsMainSection">
+            <!-- <div class="sectionCheckAll">
+              <input type="checkbox"  kendoCheckBox /> 
+            </div> -->
+            <div class="dragabbleSectionCheckBox">
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              <i class="fa fa-ellipsis-v" aria-hidden="true" style="height: 16px;"></i>
+              <input type="checkbox"  kendoCheckBox style="margin-left: 5px;"/> 
+            </div>
+            <div class="sectionCheckAllHeader">
+              Quantity
+            </div> 
+          </div> 
+          <kendo-sortable
+          [kendoSortableBinding]="items"
+          [animation]="true"
+          itemClass="columnsMainSection"
+          activeItemClass="columnsMainSection"
+          zone="section3"
+          >
+            <ng-template let-palette="item">
+              <div class="columnsMainSection">
+                <!-- <div class="sectionCheckAll">
+                  <input type="checkbox"  kendoCheckBox /> 
+                </div> -->
+                <div class="dragabbleSectionCheckBox">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-ellipsis-v" aria-hidden="true" style="height: 16px;"></i>
+                  <input type="checkbox"  kendoCheckBox style="margin-left: 5px;"/> 
+                </div>
+                <div class="sectionCheckAllHeader">
+                  {{palette}}
+                </div> 
+              </div>
+            </ng-template>
+          </kendo-sortable>
+        </div>
+        <!-- dragabble column section 03 end -->
     </div>
+   
+  </div>
+  <!--  -->
+  <div class="sortableColumnsController">
+    <!-- <div class="k-icon k-i-arrow-up"></div>
+    <div class="k-icon k-i-arrow-down"></div> -->
+    <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+    <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+  </div>
+  <!--  -->
 </div>
 <kendo-dialog-actions>
     <div class="footer">
         <div class="rightActionBtn">
-            <button kendoButton (click)="clearManageColumnsPopup()" themeColor="info" fillMode="outline">
+            <button kendoButton (click)="clearManageColumnsPopup()" themeColor="info" fillMode="outline" class="sovColumnCancel">
                 Reset to default
               </button>
         </div>
         <div class="leftActionBtn">
-            <button kendoButton (click)="closeMangeColumnsPopup()" fillMode="outline">Cancel</button>
-            <button kendoButton (click)="saveMangeColumnsPopup()" themeColor="info">Save</button>
+            <button kendoButton (click)="closeMangeColumnsPopup()" fillMode="outline" class="sovColumnCancel">Cancel</button>
+            <button kendoButton (click)="saveMangeColumnsPopup()" themeColor="info" class="sovColumnSave">Save</button>
         </div>  
     </div>
 </kendo-dialog-actions>

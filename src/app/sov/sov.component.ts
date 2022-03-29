@@ -9,8 +9,8 @@ import { SovServiceService } from '../sov-service.service';
 })
 export class SovComponent implements OnInit {
  get isDisplayManageColumns(){
-  return this.sovService.isDisplayManageColumnPopup ;
-  //return true;
+ // return this.sovService.isDisplayManageColumnPopup ;
+  return true;
  }
   constructor( @Inject(sovPanelHeaderListToken) public sovPanelHeaderList : any
   ,private sovService: SovServiceService) { }

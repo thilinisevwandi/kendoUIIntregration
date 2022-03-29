@@ -17,6 +17,8 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { ListViewModule } from '@progress/kendo-angular-listview';
+import { SortableModule } from '@progress/kendo-angular-sortable';
+
 
 
 
@@ -43,7 +45,8 @@ import { ListViewModule } from '@progress/kendo-angular-listview';
     DialogsModule,
     InputsModule,
     LayoutModule,
-    ListViewModule
+    ListViewModule,
+    SortableModule
   ],
   providers: [
     {provide:sovPanelHeaderListToken,useValue:sovPanelHeaderList}

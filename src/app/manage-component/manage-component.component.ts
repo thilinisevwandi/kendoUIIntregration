@@ -9,7 +9,8 @@ import { SovServiceService } from '../sov-service.service';
 export class ManageComponentComponent implements OnInit,AfterViewInit {
 
   constructor(private sovService : SovServiceService) { }
-
+  public items: string[] = ["Item 1", "Item 2", "Item 3"];
+  public items2: string[] = ["test 1", "test 2", "test 3"];
   /**
    * Adding style for dialog after component cration.
    */
@@ -17,7 +18,7 @@ export class ManageComponentComponent implements OnInit,AfterViewInit {
 
     // cutomize dialog
     document.querySelector('.k-dialog ')?.setAttribute('style',
-      'background-color:#FFFFFF;border:4px solid #CECECE;margin:0px;padding:0px;height:587')
+      'background-color:#FFFFFF;border:4px solid #CECECE;margin:0px;padding:0px;height:587px')
 
     // customize  dialog header
    document.querySelector('.k-dialog-titlebar')?.setAttribute('style',
@@ -34,6 +35,13 @@ export class ManageComponentComponent implements OnInit,AfterViewInit {
     document.querySelectorAll('.k-panelbar > .k-item > .k-link, .k-panelbar > .k-panelbar-header > .k-link')
     .forEach(x=>{
       x.setAttribute('style','padding:0px')
+    })
+
+    // document.querySelectorAll('.k-state-selected').forEach(x=>{
+    //   x.setAttribute('style','color:red')
+    // })
+    document.querySelectorAll('.k-link').forEach(x=>{
+      x.setAttribute('style','color:black;background-color:#e7e7e7;padding:0px;')
     })
   }
   
